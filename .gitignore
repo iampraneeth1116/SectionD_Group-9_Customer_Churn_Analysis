@@ -39,7 +39,6 @@ wheels/
 Thumbs.db
 
 # Data files (large files)
-*.csv
 *.xlsx
 *.xls
 *.parquet
