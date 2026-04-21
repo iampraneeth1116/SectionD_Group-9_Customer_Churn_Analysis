@@ -9,7 +9,7 @@
 | Raw files | olist_orders_dataset.csv, olist_customers_dataset.csv, olist_order_items_dataset.csv, olist_order_payments_dataset.csv, olist_order_reviews_dataset.csv, olist_products_dataset.csv, product_category_name_translation.csv |
 | Processed by | notebooks/02_cleaning.ipynb |
 | Granularity | One row per delivered order item (order_id × product) |
-| Rows (processed) | ~50,000 (stratified sample on churn label — see NB02 Step 16) |
+| Rows (processed) | ~105,000 (stratified sample on churn label — see NB02 Step 16) |
 | Columns | 19 |
 
 ## Column Definitions
@@ -49,6 +49,6 @@
 - Dataset was filtered to `order_status == 'delivered'` only (~96,478 rows before sampling). Non-delivered orders were excluded as they cannot contribute to churn behaviour analysis.
 - Rows where `order_delivered_customer_date` or `order_delivered_carrier_date` were null were dropped after the delivered filter — these represent incomplete delivery records.
 - `order_approved_at` nulls (~160) were filled with `order_purchase_timestamp` as the approval timestamp was not recorded for those orders.
-- The dataset was reduced to ~50,000 rows using stratified sampling on `churn` to preserve the original churn/retained distribution (see NB02 Step 16). The full pipeline can be re-run without sampling by changing `TARGET_N` in NB02.
+- The dataset was reduced to ~105,000 rows using stratified sampling on `churn` to preserve the original churn/retained distribution (see NB02 Step 16). The full pipeline can be re-run without sampling by changing `TARGET_N` in NB02.
 - `review_score` is null for orders with no associated review (~8%). These are valid data gaps, not cleaning failures.
 - `product_category_name_english` replaces the original Portuguese `product_category_name`. The Portuguese column is not included in the processed file.

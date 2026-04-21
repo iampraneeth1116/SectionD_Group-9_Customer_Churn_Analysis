@@ -102,7 +102,7 @@ def engineer_churn_label(df: pd.DataFrame) -> pd.DataFrame:
     return result
 
 
-def stratified_sample(df: pd.DataFrame, target_n: int = 50_000, random_state: int = 42) -> pd.DataFrame:
+def stratified_sample(df: pd.DataFrame, target_n: int = 105_000, random_state: int = 42) -> pd.DataFrame:
     """Reduce df to approximately target_n rows using stratified sampling on the churn column.
 
     Stratifying on churn preserves the original churn/retained distribution in the sample,
