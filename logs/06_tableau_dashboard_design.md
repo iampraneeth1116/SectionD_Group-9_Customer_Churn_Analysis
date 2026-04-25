@@ -43,7 +43,7 @@ This stage directly builds on:
 ## Tableau Deployment
 
 Dashboard published at:  
-https://public.tableau.com/views/CustomerChurn_17769513030030/Retention?:language=en-US&publish=yes
+https://public.tableau.com/app/profile/atharva.sharma1638/viz/CustomerChurn_17769513030030/Retention
 
 ---
 
