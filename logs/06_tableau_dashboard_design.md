@@ -43,7 +43,7 @@ This stage directly builds on:
 ## Tableau Deployment
 
 Dashboard published at:  
-https://public.tableau.com/app/profile/atharva.sharma1638/viz/CustomerChurn_17769513030030/Retention
+https://public.tableau.com/views/CustomerChurn_17769513030030/Retention
 
 ---
 
@@ -86,6 +86,24 @@ Three dashboards designed as a modular analytical flow:
 
 ### Design Principle
 Each dashboard answers a distinct analytical question while maintaining visual consistency.
+
+### Storytelling Flow (Final Design)
+
+The dashboards are intentionally structured as a left-to-right and top-to-bottom analytical narrative:
+
+1. **Retention (Entry Point)**  
+   Establishes the baseline problem — extremely high churn and low repeat rate.  
+   Focus: “What is happening?”
+
+2. **Behavior (Diagnostic Layer)**  
+   Explains customer value distribution and spending behavior.  
+   Focus: “Who are these customers and how do they behave?”
+
+3. **Churn Drivers (Causal Layer)**  
+   Identifies operational and experiential factors driving churn.  
+   Focus: “Why is churn happening?”
+
+This progression ensures that users move from observation → segmentation → causation without cognitive overload.
 
 ---
 
@@ -178,14 +196,15 @@ Understand baseline customer behavior and retention structure
 - Total Revenue
 
 ### Charts
-1. Customer Lifecycle Distribution  
-2. Review vs Repeat Rate  
-3. Payment vs Repeat Rate  
+1. Customer Lifecycle Distribution (log scale applied)  
+2. Review vs Repeat Rate (sorted descending)  
+3. Payment vs Repeat Rate (dot plot for compact comparison)  
 
 ### Key Insights
-- Churn is structurally high (~97%)
-- Repeat customers are extremely rare
-- Customer experience (reviews) impacts retention
+- Customer base is overwhelmingly one-time buyers (~97%)  
+- Retention sharply increases with order frequency, but volume remains negligible  
+- Customers with no reviews show the highest repeat rate (possible survivorship bias)  
+- Payment method differences exist but are not dominant drivers  
 
 ### Link to Statistics
 - Review score → statistically significant (NB04)
@@ -204,14 +223,15 @@ Analyze how customers spend and interact
 - High Value %
 
 ### Charts
-1. Spend Distribution (log scale applied)  
-2. Avg Spend vs Order Count (line chart)  
-3. Spend vs Repeat  
+1. Average Spend vs Order Count (primary trend view)  
+2. Spend Distribution (log scale applied)  
+3. Spend vs Repeat Rate (segmented comparison)  
 
 ### Key Insights
-- Distribution is highly skewed (long-tail behavior)
-- High spend → higher repeat likelihood
-- Majority customers are low-value
+- Customer spending follows a strong long-tail distribution (majority low spenders)  
+- Repeat likelihood increases significantly with higher spend segments  
+- Average spend peaks around mid-frequency customers (4 orders), then slightly declines  
+- High-value customers are extremely rare but disproportionately important  
 
 ### Link to Statistics
 - Price → statistically significant but negligible effect  
@@ -230,15 +250,16 @@ Identify what drives churn
 - Avg Delivery Delay  
 
 ### Charts
-1. Churn by Review Score  
-2. Churn by Spend Segment  
-3. Churn by Payment Type  
-4. Churn Contribution  
+1. Delivery Delay Trend Over Time (monthly granularity fixed)  
+2. Churn by Review Score  
+3. Churn Contribution by Spend Segment  
+4. Churn Rate by Payment Type  
 
 ### Key Insights
-- Low-value customers dominate churn contribution  
-- Payment type has weak but visible effect  
-- Review score strongly aligned with churn direction  
+- Delivery delays show temporal fluctuation and align with churn risk periods  
+- Low-value customers contribute ~99% of total churn volume  
+- Review scores maintain a consistent directional relationship with churn  
+- Payment type impact is visible but comparatively weak  
 
 ### Link to Statistics
 - Delivery delay → strongest driver (NB04)  
@@ -261,6 +282,7 @@ Identify what drives churn
 | Line chart used selectively | Only for trend clarity |
 | Pie charts avoided | Misleading under skew |
 | Histograms avoided | Space + low interpretability |
+| Consistent layout across dashboards | Improves usability and reduces cognitive load |
 
 ---
 
@@ -282,6 +304,11 @@ Identify what drives churn
 ### 4. High Churn Baseline
 - Issue: Hard to interpret differences
 - Fix: Focus on relative comparisons
+
+### 5. Storytelling Clarity
+- Issue: Dashboards initially felt like independent views  
+- Fix: Reordered layouts and standardized chart hierarchy  
+- Outcome: Clear narrative flow from retention → behavior → drivers  
 
 ---
 
@@ -313,6 +340,9 @@ Identify what drives churn
 - Simplicity > variety in dashboard design  
 - Log scaling is critical for skewed data  
 - Strong storytelling requires structured dashboard flow  
+- Dashboard sequencing is as important as chart design  
+- Narrative flow significantly improves interpretability  
+- Minimalism with consistency outperforms complex visuals  
 
 ---
 
