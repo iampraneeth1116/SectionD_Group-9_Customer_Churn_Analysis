@@ -3,4 +3,4 @@
 | Name | Portfolio Link | 
 |---|---|
 | Gokul VKS | https://dva-portfolio-roan-five.vercel.app|
-| Abhijeet Sinha | dva.abhijeet.pw|
+| Abhijeet Sinha | https://dva.abhijeet.pw|
