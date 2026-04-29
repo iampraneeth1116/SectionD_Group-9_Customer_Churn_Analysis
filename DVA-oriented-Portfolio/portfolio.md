@@ -7,3 +7,4 @@
 | Nakkina Lakshmi Praneeth | https://dva-portfolio-pi.vercel.app/ |
 | Himank Kaushik | https://nobody-knowsbetter.github.io/DVA_Portfolio |
 | Atharva Sharma | https://dva-portfolio-lilac.vercel.app |
+| Priyal Sarda | https://priyal-2005.github.io/DVAPortfolio/ |
